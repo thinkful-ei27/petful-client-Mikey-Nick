@@ -1,3 +1,4 @@
+const API_BASE_URL = 'http://localhost:8080';
 export const FETCH_DOG_SUCCESS = 'FETCH_DOG_SUCCESS';
 export const fetchDogSuccess = (dog) => ({
    type: FETCH_DOG_SUCCESS,

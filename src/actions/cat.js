@@ -1,3 +1,4 @@
+const API_BASE_URL = 'http://localhost:8080';
 export const FETCH_CAT_SUCCESS = 'FETCH_CAT_SUCCESS';
 export const fetchCatSuccess = (cat) => ({
    type: FETCH_CAT_SUCCESS,

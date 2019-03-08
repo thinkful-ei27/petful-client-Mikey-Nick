@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
 import Dashboard from './Dashboard.js';
 import store from './store.js';
@@ -26,11 +25,11 @@ const dogToAdopt = {
   story: 'Thinkful grad'
 };
 
-const combined = { catToAdopt, dogToAdopt };
+
 
 ReactDOM.render(
   <Provider store={store}>
-    <Dashboard catToAdopt={catToAdopt} dogToAdopt={dogToAdopt} />
+    <Dashboard />
   </Provider>
   , document.getElementById('root'));
 // If you want your app to work offline and load faster, you can change

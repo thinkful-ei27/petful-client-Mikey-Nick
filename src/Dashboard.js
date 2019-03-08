@@ -1,8 +1,9 @@
 'use strict';
 import React from 'react';
 import Pet from './components/Pet.js';
+import { connect } from 'react-redux';
 
-export default class Dashboard extends React.Component{
+class Dashboard extends React.Component{
     constructor(props){
         super(props)
     }
@@ -16,9 +17,16 @@ export default class Dashboard extends React.Component{
         return(
 
           <div>
-          <Pet onAdoptPet={(e)=>this.handleClick(e)}petToAdopt={this.props.catToAdopt}/>
-          <Pet onAdoptPet={(e)=>this.handleClick(e)} petToAdopt={this.props.dogToAdopt}/>
+            <Pet onAdoptPet={(e)=>this.handleClick(e)} petToAdopt={this.props.cat}/>
+            <Pet onAdoptPet={(e)=>this.handleClick(e)} petToAdopt={this.props.dog}/>
           </div>
         )
     }
 }
+
+const mapStateToProps = state => ({
+  cat: state.cat.data,
+  dog: state.dog.data
+})
+
+export default connect(mapStateToProps)(Dashboard);

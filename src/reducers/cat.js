@@ -1,9 +1,19 @@
-import { catActions } from '../actions/index.js';
+import actions from '../actions/index.js';
 const catInitialState = {
-  data: null,
+  data: {
+    imageURL: 'https://media.licdn.com/dms/image/C4D03AQHZ-6yyqVB_mA/profile-displayphoto-shrink_800_800/0?e=1557360000&v=beta&t=03_sR7NHm_oHgyV-dRjHQ_gtVsQzMZKZjkoJPRRDaI4',
+    imageDescription: `Look hes chillen!`,
+    name: 'Peter',
+    sex: 'Male',
+    age: 6,
+    breed: 'NorEaster',
+    story: 'Thinkful grad'
+  },
   error: null,
   loading: false
 };
+
+const { catActions } = actions;
 
 export const catReducer = (state = catInitialState, action) => {
   if (action.type === catActions.FETCH_CAT_REQUEST) {
