@@ -26,7 +26,7 @@ const dogToAdopt = {
 
 const combined = {catToAdopt, dogToAdopt};
 
-ReactDOM.render(<Dashboard props={combined}/>, document.getElementById('root'));
+ReactDOM.render(<Dashboard catToAdopt={catToAdopt} dogToAdopt={dogToAdopt}/>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
