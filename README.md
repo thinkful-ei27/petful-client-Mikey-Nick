@@ -10,3 +10,6 @@ Totally Real Dogs!
 
 And Cats!
 ![And cats!](https://github.com/thinkful-ei27/petful-client-Mikey-Nick/blob/master/Screenshot%20from%202019-03-08%2017-13-21.png?raw=true)
+
+
+PetCrash, despite the name, is super-stable due to its use of React, Redux, and Thunk.
