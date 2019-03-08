@@ -18,14 +18,16 @@ const { catActions } = actions;
 export const catReducer = (state = catInitialState, action) => {
   if (action.type === catActions.FETCH_CAT_REQUEST) {
     return Object.assign({}, state, {
-      loading: true
+      loading: true,
+      error: false
     })
   }
   if (action.type === catActions.FETCH_CAT_SUCCESS) {
     console.log(action);
     return Object.assign({}, state, {
       loading: false,
-      data: action.cat
+      data: action.cat,
+      error: false
     })
   }
   if (action.type === catActions.FETCH_CAT_ERROR) {
@@ -37,7 +39,8 @@ export const catReducer = (state = catInitialState, action) => {
   if (action.type === catActions.ADOPT_CAT_SUCCESS)
     return Object.assign({}, state, {
       loading: true,
-      data: null
+      data: null,
+      error: false
     })
   if (action.type === catActions.ADOPT_CAT_ERROR)
     return Object.assign({}, state, {

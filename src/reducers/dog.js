@@ -18,13 +18,15 @@ const {dogActions} = actions;
 export const dogReducer = (state = dogInitialState, action) => {
   if (action.type === dogActions.FETCH_DOG_REQUEST) {
     return Object.assign({}, state, {
-      loading: true
+      loading: true,
+      error: false
     })
   }
   if (action.type === dogActions.FETCH_DOG_SUCCESS) {
     return Object.assign({}, state, {
       loading: false,
-      data: action.dog
+      data: action.dog,
+      error: false
     })
   }
   if (action.type === dogActions.FETCH_DOG_ERROR) {
@@ -36,7 +38,8 @@ export const dogReducer = (state = dogInitialState, action) => {
   if (action.type === dogActions.ADOPT_DOG_SUCCESS)
     return Object.assign({}, state, {
       loading: true,
-      data: null
+      data: null,
+      error: false
     })
   if (action.type === dogActions.ADOPT_DOG_ERROR)
     return Object.assign({}, state, {
