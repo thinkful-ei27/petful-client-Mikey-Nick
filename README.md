@@ -1,3 +1,5 @@
+Link to site: https://glacial-fjord-79364.herokuapp.com/
+
 PetCrash is the hot, new web app for shelters trying to provide every pet a home. With a unique First-In First-Out approach to adoption, PetCrash ensures that EVERY pet finds loving forever parents. A mobile friendly design lets prospective adopters see which doting dog or curious cat is available anytime, anywhere.
 
 ![Dogs and Cats living temporarily in harmony on the PetCrash WebApp!](https://github.com/thinkful-ei27/petful-client-Mikey-Nick/blob/master/Screenshot%20from%202019-03-08%2017-12-57.png?raw=true)
@@ -13,3 +15,5 @@ And Cats!
 
 
 PetCrash, despite the name, is super-stable due to its use of React, Redux, and Thunk.
+
+The backend uses Node and JavaScript, industry standards. 
