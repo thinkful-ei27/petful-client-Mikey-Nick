@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:8080';
+import { API_BASE_URL } from '../config.js'
 export const FETCH_CAT_SUCCESS = 'FETCH_CAT_SUCCESS';
 export const fetchCatSuccess = (cat) => ({
    type: FETCH_CAT_SUCCESS,
@@ -24,6 +24,7 @@ export const fetchCat = () => dispatch => {
       }
       return res.json();
   }).then(cat => {
+      console.log(cat);
       dispatch(fetchCatSuccess(cat));
   }).catch(err => {
       dispatch(fetchCatError(err));

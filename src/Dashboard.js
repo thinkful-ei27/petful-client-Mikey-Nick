@@ -2,26 +2,34 @@
 import React from 'react';
 import Pet from './components/Pet.js';
 import { connect } from 'react-redux';
+import actions  from './actions/index'
 
-class Dashboard extends React.Component{
-    constructor(props){
-        super(props)
-    }
-    //This will take catToAdopt and dogToAdopt
-    handleClick = e => {
-      e.preventDefault();
-      console.log(e.target.value);
-    }
+const{ dogActions , catActions } = actions
 
-    render(){
-        return(
+class Dashboard extends React.Component {
+  constructor(props) {
+    super(props)
+  }
 
-          <div>
-            <Pet onAdoptPet={(e)=>this.handleClick(e)} petToAdopt={this.props.cat}/>
-            <Pet onAdoptPet={(e)=>this.handleClick(e)} petToAdopt={this.props.dog}/>
-          </div>
-        )
-    }
+  componentDidMount() {
+    this.props.dispatch(catActions.fetchCat())
+    this.props.dispatch(dogActions.fetchDog())
+  }
+
+  //This will take catToAdopt and dogToAdopt
+  handleClick = e => {
+    e.preventDefault();
+    console.log(e.target.value);
+  }
+
+  render() {
+    return (
+      <div>
+        <Pet onAdoptPet={(e) => this.handleClick(e)} petToAdopt={this.props.cat} />
+        <Pet onAdoptPet={(e) => this.handleClick(e)} petToAdopt={this.props.dog} />
+      </div>
+    )
+  }
 }
 
 const mapStateToProps = state => ({

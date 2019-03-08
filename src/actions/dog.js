@@ -1,8 +1,10 @@
-const API_BASE_URL = 'http://localhost:8080';
+import { API_BASE_URL } from '../config.js'
+
+
 export const FETCH_DOG_SUCCESS = 'FETCH_DOG_SUCCESS';
 export const fetchDogSuccess = (dog) => ({
-   type: FETCH_DOG_SUCCESS,
-   dog
+    type: FETCH_DOG_SUCCESS,
+    dog
 });
 
 export const FETCH_DOG_REQUEST = 'FETCH_DOG_REQUEST';
@@ -17,17 +19,17 @@ export const fetchDogError = (error) => ({
 });
 
 export const fetchDog = () => dispatch => {
-  dispatch(fetchDogRequest());
-  fetch(`${API_BASE_URL}/api/dog`).then(res => {
-      if(!res.ok){
-          return Promise.reject(res.statusText);
-      }
-      return res.json();
-  }).then(dog => {
-      dispatch(fetchDogSuccess(dog));
-  }).catch(err => {
-      dispatch(fetchDogError(err));
-  })
+    dispatch(fetchDogRequest());
+    fetch(`${API_BASE_URL}/api/dog`).then(res => {
+        if (!res.ok) {
+            return Promise.reject(res.statusText);
+        }
+        return res.json();
+    }).then(dog => {
+        dispatch(fetchDogSuccess(dog));
+    }).catch(err => {
+        dispatch(fetchDogError(err));
+    })
 };
 
 export const ADOPT_DOG_SUCCESS = 'ADOPT_DOG_SUCCESS';
@@ -46,7 +48,7 @@ export const adoptDog = () => dispatch => {
     fetch(`${API_BASE_URL}/api/dog`, {
         method: 'DELETE'
     }).then(res => {
-        if(!res.ok){
+        if (!res.ok) {
             return Promise.reject(res.statusText);
         }
         return res.json();
