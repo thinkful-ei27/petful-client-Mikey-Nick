@@ -17,6 +17,7 @@ export const fetchCatError = (error) => ({
 });
 
 export const fetchCat = () => dispatch => {
+  console.log('FetchCat was called');
   dispatch(fetchCatRequest());
   fetch(`${API_BASE_URL}/api/cat`).then(res => {
       if(!res.ok){
@@ -24,7 +25,6 @@ export const fetchCat = () => dispatch => {
       }
       return res.json();
   }).then(cat => {
-      console.log(cat);
       dispatch(fetchCatSuccess(cat));
   }).catch(err => {
       dispatch(fetchCatError(err));
@@ -50,10 +50,9 @@ export const adoptCat = () => dispatch => {
         if(!res.ok){
             return Promise.reject(res.statusText);
         }
-        return res.json();
-    }).then(res => {
         dispatch(adoptCatSuccess(res));
+        return dispatch(fetchCat());
     }).catch(err => {
-        dispatch(adoptCatError(err));
+        return dispatch(adoptCatError(err));
     });
 }

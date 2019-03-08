@@ -6,7 +6,11 @@ export default class extends React.Component {
   };
 
 
+
   render() {
+    if(this.props.loading){
+     return (<h1>I am loading</h1>)
+    } else {
     return (
       <section>
         <h2>{this.props.petToAdopt.name}</h2>
@@ -22,10 +26,12 @@ export default class extends React.Component {
             <dt>Story</dt>
             <dd>{this.props.petToAdopt.story}</dd>
           </dl>
-          <button value={this.props.petToAdopt.name}
+          <button value={this.props.petToAdopt.animal}
             onClick={(e) => this.props.onAdoptPet(e)}>
             Adopt</button>
         </main>
       </section>)
   }
 }
+}
+

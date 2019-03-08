@@ -35,7 +35,7 @@ export const dogReducer = (state = dogInitialState, action) => {
   }
   if (action.type === dogActions.ADOPT_DOG_SUCCESS)
     return Object.assign({}, state, {
-      loading: false,
+      loading: true,
       data: null
     })
   if (action.type === dogActions.ADOPT_DOG_ERROR)

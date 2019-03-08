@@ -36,7 +36,7 @@ export const catReducer = (state = catInitialState, action) => {
   }
   if (action.type === catActions.ADOPT_CAT_SUCCESS)
     return Object.assign({}, state, {
-      loading: false,
+      loading: true,
       data: null
     })
   if (action.type === catActions.ADOPT_CAT_ERROR)

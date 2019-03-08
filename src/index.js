@@ -6,24 +6,24 @@ import Dashboard from './Dashboard.js';
 import store from './store.js';
 import { Provider } from 'react-redux';
 
-const catToAdopt = {
-  imageURL: 'https://media.licdn.com/dms/image/C4D03AQHZ-6yyqVB_mA/profile-displayphoto-shrink_800_800/0?e=1557360000&v=beta&t=03_sR7NHm_oHgyV-dRjHQ_gtVsQzMZKZjkoJPRRDaI4',
-  imageDescription: `Look hes chillen!`,
-  name: 'Peter',
-  sex: 'Male',
-  age: 6,
-  breed: 'NorEaster',
-  story: 'Thinkful grad'
-};
-const dogToAdopt = {
-  imageURL: 'https://media.licdn.com/dms/image/C5103AQEv9ADgSV2xOg/profile-displayphoto-shrink_800_800/0?e=1557360000&v=beta&t=nCEDVVxrTlsr2_6qEcGkjgzPEMh2w3m6a6G2j7Gl0SY',
-  imageDescription: `He's a smiler!`,
-  name: 'John',
-  sex: 'Male',
-  age: 5,
-  breed: 'Marylander',
-  story: 'Thinkful grad'
-};
+// const catToAdopt = {
+//   imageURL: 'https://media.licdn.com/dms/image/C4D03AQHZ-6yyqVB_mA/profile-displayphoto-shrink_800_800/0?e=1557360000&v=beta&t=03_sR7NHm_oHgyV-dRjHQ_gtVsQzMZKZjkoJPRRDaI4',
+//   imageDescription: `Look hes chillen!`,
+//   name: 'Peter',
+//   sex: 'Male',
+//   age: 6,
+//   breed: 'NorEaster',
+//   story: 'Thinkful grad'
+// };
+// const dogToAdopt = {
+//   imageURL: 'https://media.licdn.com/dms/image/C5103AQEv9ADgSV2xOg/profile-displayphoto-shrink_800_800/0?e=1557360000&v=beta&t=nCEDVVxrTlsr2_6qEcGkjgzPEMh2w3m6a6G2j7Gl0SY',
+//   imageDescription: `He's a smiler!`,
+//   name: 'John',
+//   sex: 'Male',
+//   age: 5,
+//   breed: 'Marylander',
+//   story: 'Thinkful grad'
+// };
 
 
 
