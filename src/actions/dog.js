@@ -38,7 +38,9 @@ export const adoptDogSuccess = () => ({
 });
 
 export const ADOPT_DOG_ERROR = 'ADOPT_DOG_ERROR';
+
 export const adoptDogError = (err) => ({
+    
     type: ADOPT_DOG_ERROR,
     err
 })
@@ -54,6 +56,8 @@ export const adoptDog = () => dispatch => {
         dispatch(adoptDogSuccess(res));
         dispatch(fetchDog());
     }).catch(err => {
+        err = 'outta pets'
+        console.log(err, 'hey this ran')
         dispatch(adoptDogError(err));
     });
 }

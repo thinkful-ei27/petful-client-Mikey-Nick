@@ -1,8 +1,8 @@
 import { API_BASE_URL } from '../config.js'
 export const FETCH_CAT_SUCCESS = 'FETCH_CAT_SUCCESS';
 export const fetchCatSuccess = (cat) => ({
-   type: FETCH_CAT_SUCCESS,
-   cat
+    type: FETCH_CAT_SUCCESS,
+    cat
 });
 
 export const FETCH_CAT_REQUEST = 'FETCH_CAT_REQUEST';
@@ -17,19 +17,19 @@ export const fetchCatError = (error) => ({
 });
 
 export const fetchCat = () => dispatch => {
-  console.log('FetchCat was called');
-  dispatch(fetchCatRequest());
-  fetch(`${API_BASE_URL}/api/cat`).then(res => {
-      if(!res.ok){
-          return Promise.reject(res.statusText);
-      }
-      return res.json();
-  }).then(cat => {
-      dispatch(fetchCatSuccess(cat));
-  }).catch(err => {
-      dispatch(fetchCatError(err));
-  })
-} 
+    console.log('FetchCat was called');
+    dispatch(fetchCatRequest());
+    fetch(`${API_BASE_URL}/api/cat`).then(res => {
+        if (!res.ok) {
+            return Promise.reject(res.statusText);
+        }
+        return res.json();
+    }).then(cat => {
+        dispatch(fetchCatSuccess(cat));
+    }).catch(err => {
+        dispatch(fetchCatError(err));
+    })
+}
 
 export const ADOPT_CAT_SUCCESS = 'ADOPT_CAT_SUCCESS';
 export const adoptCatSuccess = () => ({
@@ -47,7 +47,7 @@ export const adoptCat = () => dispatch => {
     fetch(`${API_BASE_URL}/api/cat`, {
         method: 'DELETE'
     }).then(res => {
-        if(!res.ok){
+        if (!res.ok) {
             return Promise.reject(res.statusText);
         }
         dispatch(adoptCatSuccess(res));
